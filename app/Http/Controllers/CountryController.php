@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class CountryController extends Controller
 {
     public function index(){
-        $countries = Country::withCount(['states'])->get();
+        $countries = Country::get();
         return view('country.index', compact('countries'));
     }
     public function store(Request $request){

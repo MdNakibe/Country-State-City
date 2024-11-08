@@ -104,8 +104,6 @@
                     </td>
                 </tr>
             `);
-
-            // Close modal and reset form
             $('#createModal').modal('hide');
             $('#createForm')[0].reset();
         }).fail(function (error) {
@@ -151,8 +149,6 @@
                 data: { _token: '{{ csrf_token() }}' },
                 success: function (response) {
                     alert(response.message);
-
-                    // Remove the country row
                     $(`#row-${id}`).remove();
                 },
                 error: function (error) {

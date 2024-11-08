@@ -104,7 +104,6 @@
 
 @section('custom-script')
 <script>
-    // Create a city
     $('#createForm').submit(function (e) {
         e.preventDefault();
         const formData = $(this).serialize();
@@ -122,24 +121,18 @@
                     </td>
                 </tr>
             `);
-
-            // Close modal and reset form
             $('#createModal').modal('hide');
             $('#createForm')[0].reset();
         }).fail(function (error) {
             alert('Error: ' + error.responseJSON.message);
         });
     });
-
-    // Open edit modal
     function openEditModal(id, name, state_id) {
         $('#editId').val(id);
         $('#editName').val(name);
         $('#editState').val(state_id);
         $('#editModal').modal('show');
     }
-
-    // Edit a city
     $('#editForm').submit(function (e) {
         e.preventDefault();
         const id = $('#editId').val();

@@ -54,7 +54,6 @@ class CityController extends Controller
     public function destroy($id){
         $city = City::findOrFail($id);
         $city->delete();
-
         return response()->json(['message' => 'City deleted successfully.']);
     }
 }

@@ -104,7 +104,6 @@
 
 @section('custom-script')
 <script>
-    // Create a state
     $('#createForm').submit(function (e) {
         e.preventDefault();
         const formData = $(this).serialize();
@@ -123,7 +122,6 @@
                 </tr>
             `);
 
-            // Close modal and reset form
             $('#createModal').modal('hide');
             $('#createForm')[0].reset();
         }).fail(function (error) {
@@ -131,15 +129,12 @@
         });
     });
 
-    // Open edit modal
     function openEditModal(id, name, country_id) {
         $('#editId').val(id);
         $('#editName').val(name);
         $('#editCountry').val(country_id);
         $('#editModal').modal('show');
     }
-
-    // Edit a state
     $('#editForm').submit(function (e) {
         e.preventDefault();
         const id = $('#editId').val();
